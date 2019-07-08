@@ -14,7 +14,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.6.Final</version>
+            <version>4.1.25.Final</version>
         </dependency>
         <!--这里使用jackson反序列字节码-->
         <dependency>
@@ -28,5 +28,6 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
     </dependencies>
 </project>
