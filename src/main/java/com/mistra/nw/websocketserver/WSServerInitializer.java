@@ -14,7 +14,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
  * @ Time: 2019/7/10 21:07
  * @ Description:
  */
-public class WSServerInitialzer extends ChannelInitializer<SocketChannel> {
+public class WSServerInitializer extends ChannelInitializer<SocketChannel> {
 
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         ChannelPipeline channelPipeline = socketChannel.pipeline();

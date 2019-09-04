@@ -35,12 +35,13 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
         //当客户端连接服务之后，获取客户端的channel，交给channelGroup来管理
         channelGroup.add(ctx.channel());
+        System.out.println("客户端建立连接，ID为：" + ctx.channel().id());
     }
 
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         //当触发到handlerRemoved方法的时候，channelGroup会自动移除对应的channel，下面这句代码可不写
         //channelGroup.remove(ctx.channel());
-        System.out.println(ctx.channel().id());
+        System.out.println("客户端断开连接，ID为：" + ctx.channel().id());
     }
 }

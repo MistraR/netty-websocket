@@ -21,7 +21,7 @@ public class WebSocketServer {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(mainGroup, subGroup)// 设置主从线程组
                     .channel(NioServerSocketChannel.class)//设置Nio的双向通道
-                    .childHandler(new WSServerInitialzer());//设置子处理器 用于处理workEventLoopGroup
+                    .childHandler(new WSServerInitializer());//设置子处理器 用于处理workEventLoopGroup
             ChannelFuture channelFuture = serverBootstrap.bind(8088).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {

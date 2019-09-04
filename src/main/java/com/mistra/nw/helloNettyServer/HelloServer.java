@@ -15,14 +15,14 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 public class HelloServer {
 
     public static void main(String[] args) throws InterruptedException {
-
-        //主线程组，用于接收客户端连接，但不做任何处理
+        //定义一对线程组
+        //主线程组，用于接收客户端连接，但不做任何处理，丢给从线程组处理
         EventLoopGroup mainEventLoopGroup = new NioEventLoopGroup();
 
         //从线程组，负责处理
         EventLoopGroup workEventLoopGroup = new NioEventLoopGroup();
         try {
-            //netty服务器的创建，启动类
+            //netty服务器的创建，ServerBootstrap是启动类
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(mainEventLoopGroup, workEventLoopGroup)// 设置主从线程组
                     .channel(NioServerSocketChannel.class)//设置Nio的双向通道
